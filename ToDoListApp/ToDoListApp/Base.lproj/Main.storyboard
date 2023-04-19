@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mH2-7N-VMe">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Yapılacaklar Listesi-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ToDoListApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gAO-Jm-9gu">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notHucre" id="mG5-ct-zGu" customClass="NotlarTableViewCell" customModule="ToDoListApp" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="55.333332061767578" width="353" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mG5-ct-zGu" id="FGa-0s-d8b">
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wg2-G6-So4">
+                                                    <rect key="frame" x="20" y="9" width="313" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wg2-G6-So4" firstAttribute="top" secondItem="FGa-0s-d8b" secondAttribute="top" constant="9" id="2tM-Rp-hkD"/>
+                                                <constraint firstAttribute="trailing" secondItem="wg2-G6-So4" secondAttribute="trailing" constant="20" id="Vpd-aA-1Ee"/>
+                                                <constraint firstItem="wg2-G6-So4" firstAttribute="leading" secondItem="FGa-0s-d8b" secondAttribute="leading" constant="20" symbolic="YES" id="weO-iS-9fE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="notLabel" destination="wg2-G6-So4" id="BOr-lS-Sgj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        <constraints>
+                            <constraint firstItem="gAO-Jm-9gu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="NnO-wF-qMv"/>
+                            <constraint firstItem="gAO-Jm-9gu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PGe-8b-Oyw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gAO-Jm-9gu" secondAttribute="trailing" id="XLA-RX-8IZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gAO-Jm-9gu" secondAttribute="bottom" id="ry1-nX-nRg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Yapılacaklar Listesi" id="tgF-6A-AXg">
+                        <barButtonItem key="rightBarButtonItem" image="plus.app.fill" catalog="system" id="jYj-ea-6nC">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="notEkle:" destination="BYZ-38-t0r" id="JlO-7b-16Y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="notTableView" destination="gAO-Jm-9gu" id="RW9-Ha-lgw"/>
+                        <segue destination="PaK-sp-dgq" kind="show" identifier="toNotDetay" id="eZa-aj-6w0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1043.5114503816794" y="3.5211267605633805"/>
+        </scene>
+        <!--Duzenle View Controller-->
+        <scene sceneID="RDF-in-gIq">
+            <objects>
+                <viewController id="PaK-sp-dgq" customClass="DuzenleViewController" customModule="ToDoListApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W8L-dk-6ZN">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="89T-8k-rWF">
+                                <rect key="frame" x="16" y="341" width="361" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9YO-IE-BD5">
+                                <rect key="frame" x="16" y="409" width="361" height="35"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Düzenle"/>
+                                <connections>
+                                    <action selector="notDuzenle:" destination="PaK-sp-dgq" eventType="touchUpInside" id="ww0-0m-3oo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notunu düzenle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhT-3e-EdY">
+                                <rect key="frame" x="112" y="228" width="169" height="28"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oXM-Eb-XKA"/>
+                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        <constraints>
+                            <constraint firstItem="oXM-Eb-XKA" firstAttribute="trailing" secondItem="IhT-3e-EdY" secondAttribute="trailing" constant="112" id="1tj-7T-evc"/>
+                            <constraint firstItem="oXM-Eb-XKA" firstAttribute="trailing" secondItem="9YO-IE-BD5" secondAttribute="trailing" constant="16" id="5Si-Dt-CT4"/>
+                            <constraint firstItem="9YO-IE-BD5" firstAttribute="top" secondItem="89T-8k-rWF" secondAttribute="bottom" constant="34" id="RM8-IK-Kr2"/>
+                            <constraint firstItem="IhT-3e-EdY" firstAttribute="top" secondItem="oXM-Eb-XKA" secondAttribute="top" constant="125" id="TwG-Kh-9zm"/>
+                            <constraint firstItem="oXM-Eb-XKA" firstAttribute="trailing" secondItem="89T-8k-rWF" secondAttribute="trailing" constant="16" id="gO1-gh-BfF"/>
+                            <constraint firstItem="IhT-3e-EdY" firstAttribute="leading" secondItem="oXM-Eb-XKA" secondAttribute="leading" constant="112" id="hb5-WE-GJY"/>
+                            <constraint firstItem="89T-8k-rWF" firstAttribute="top" secondItem="W8L-dk-6ZN" secondAttribute="top" constant="341" id="jDc-pK-sLt"/>
+                            <constraint firstItem="9YO-IE-BD5" firstAttribute="leading" secondItem="oXM-Eb-XKA" secondAttribute="leading" constant="16" id="pE2-yk-Ga5"/>
+                            <constraint firstItem="89T-8k-rWF" firstAttribute="leading" secondItem="oXM-Eb-XKA" secondAttribute="leading" constant="16" id="vzp-mw-iV6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yX5-Y3-6ls"/>
+                    <connections>
+                        <outlet property="eskinotTextField" destination="89T-8k-rWF" id="E7r-sO-Mq5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TrU-un-25l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1765.6488549618321" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6Ca-zR-OGy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mH2-7N-VMe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="y6I-XG-cyL">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="tintColor"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cNO-pF-5kC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FRb-lF-PJy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116.79389312977099" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus.app.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
